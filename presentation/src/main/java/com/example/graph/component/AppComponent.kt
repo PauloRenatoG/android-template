@@ -2,6 +2,7 @@ package com.example.graph.component
 
 import android.content.Context
 import com.example.ApplicationComponent
+import com.example.graph.module.ActivityBindingModule
 import com.example.graph.module.ApiProviderModule
 import dagger.BindsInstance
 import dagger.Component
@@ -15,7 +16,8 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         AndroidSupportInjectionModule::class,
-        ApiProviderModule::class
+        ApiProviderModule::class,
+        ActivityBindingModule::class
     ]
 )
 interface AppComponent {

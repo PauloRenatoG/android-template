@@ -56,6 +56,7 @@ dependencies {
 
     // LifeCycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifeCycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelVersion"
 
     // Android
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
