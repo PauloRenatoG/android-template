@@ -1,11 +1,11 @@
 package com.example.data.client
 
-import com.example.data.util.RequestHandle
+import com.example.data.util.RequestHandler
 import javax.inject.Inject
 
 class ApiClient @Inject constructor(
     private val apiService: ApiService
-): RequestHandle() {
+) : RequestHandler() {
 
     suspend fun getList(): String? {
         return makeRequest(apiService.getList())
