@@ -61,6 +61,7 @@ dependencies {
     // Android
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
+    implementation "com.google.android.material:material:$materialVersion"
 
     // Tests
     testImplementation "junit:junit:$junitVersion"
