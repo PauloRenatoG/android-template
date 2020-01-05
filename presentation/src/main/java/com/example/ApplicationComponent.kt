@@ -1,25 +1,19 @@
 package com.example
 
-import androidx.multidex.MultiDexApplication
+import android.content.Context
+import androidx.multidex.MultiDex
 import com.example.graph.component.DaggerAppComponent
 import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasAndroidInjector
-import javax.inject.Inject
+import dagger.android.DaggerApplication
 
-class ApplicationComponent : MultiDexApplication(), HasAndroidInjector {
+class ApplicationComponent : DaggerApplication() {
 
-    @Inject
-    protected lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
-
-    override fun onCreate() {
-        super.onCreate()
-        DaggerAppComponent
-            .builder()
-            .context(this)
-            .build()
-            .inject(this)
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
     }
 
-    override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
+    override fun applicationInjector(): AndroidInjector<ApplicationComponent> {
+        return DaggerAppComponent.create()
+    }
 }
