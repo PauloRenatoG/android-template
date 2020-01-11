@@ -7,7 +7,4 @@ class ApiClient @Inject constructor(
     private val apiService: ApiService
 ) : RequestHandler() {
 
-    suspend fun getList(): String? {
-        return makeRequest(apiService.getList())
-    }
 }

@@ -34,7 +34,10 @@ android {
             buildConfigField "String", "API_ENDPOINT", "\"$rootProject.ext.apiStaging/\""
         }
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
